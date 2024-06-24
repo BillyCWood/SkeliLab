@@ -46,17 +46,18 @@ export default function Tabs() {
               "tabBarActiveTintColor": "white",
               "tabBarLabelStyle": {
                 "paddingBottom": 10,
-                "fontSize": 10
+                "fontSize": 14
               },
               "tabBarItemStyle": {
                 "backgroundColor": "black"
               },
               "tabBarStyle": [
                 {
-                  "display" : "flex"
+                  "display" : "flex",
+                  "height": 60,
                 },
                 null
-              ]
+              ],
           })}
           >
 
