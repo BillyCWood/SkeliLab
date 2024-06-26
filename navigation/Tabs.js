@@ -11,6 +11,7 @@ import StartWorkout from './screens/StartWorkout';
 
 // Components
 import Button from '../components/Button';
+import ProfileHeaderButtons from '../components/ProfileHeaderButtons';
 
 // Screen Names
 const exercisesName = 'Exercises';
@@ -63,11 +64,27 @@ export default function Tabs() {
                 null
               ],
           })}
-          >
-
-          <Tab.Screen name={profileName} component={Profile} options={styles} />
+          > 
+          <Tab.Screen name={profileName} component={Profile} 
+            // Have to use inline styles here rather than using the StyleSheet because the headerRight option is overriding the StyleSheet
+            // and inline styles override the StyleSheet
+            options={{ 
+              headerRight: () => <ProfileHeaderButtons />,
+              headerTitleAlign: 'left',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+                fontSize: 25,
+                paddingTop: 15,
+                textAlign:'left',
+              },
+            }} 
+          
+          />
+          
           <Tab.Screen name={historyName} component={History} options={styles} />
+          
           <Tab.Screen name={startWorkoutName} component={StartWorkout} options={styles} />
+          
           <Tab.Screen name={exercisesName} component={Exercises} options={styles} />
           
         </Tab.Navigator>
@@ -83,5 +100,6 @@ export default function Tabs() {
       fontWeight: 'bold',
       fontSize: 25,
       paddingTop: 15,
+      textAlign:'left',
     },
   });
