@@ -1,12 +1,16 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { StyleSheet } from 'react-native';
 
 // Screens
 import Exercises from './screens/Exercises';
 import History from './screens/History';
 import Profile from './screens/Profile';
 import StartWorkout from './screens/StartWorkout';
+
+// Components
+import Button from '../components/Button';
 
 // Screen Names
 const exercisesName = 'Exercises';
@@ -61,12 +65,23 @@ export default function Tabs() {
           })}
           >
 
-          <Tab.Screen name={profileName} component={Profile} />
-          <Tab.Screen name={historyName} component={History} />
-          <Tab.Screen name={startWorkoutName} component={StartWorkout} />
-          <Tab.Screen name={exercisesName} component={Exercises} />
+          <Tab.Screen name={profileName} component={Profile} options={styles} />
+          <Tab.Screen name={historyName} component={History} options={styles} />
+          <Tab.Screen name={startWorkoutName} component={StartWorkout} options={styles} />
+          <Tab.Screen name={exercisesName} component={Exercises} options={styles} />
           
         </Tab.Navigator>
       </NavigationContainer>
     )
   }
+
+
+  const styles = StyleSheet.create({
+
+    headerTitleAlign: 'left',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+      fontSize: 25,
+      paddingTop: 15,
+    },
+  });
