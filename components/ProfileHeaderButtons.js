@@ -1,10 +1,12 @@
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { StyleSheet,View, Modal, Text, Dimensions, Pressable } from 'react-native';
 import { useState } from 'react';
-
+import { useTheme } from '@react-navigation/native';
 
 
 export default function ProfileHeaderButtons() {
+
+    const { colors } = useTheme();
 
 
     const [modalVisibleSettings, setModalVisibleSettings] = useState(false);
