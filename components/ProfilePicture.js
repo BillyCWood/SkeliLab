@@ -1,12 +1,20 @@
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Pressable, Dimensions } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 
+let numWorkouts= 0;
+
 export default function ProfilePicture() {
     return(
-        <View style={{flexDirection:'row'} }>
+        <View style={styles.mainContainer}>
             <Ionicons name="person-circle-outline" onPress={() => alert('Profile Picture')} style={styles.ionicon} />
-            <Text style={styles.text}>Name</Text>
+            <Pressable style={styles.pressableContainer} onPress={() => alert('change name')}>
+              <View style={styles.textContainer}>
+                <Text style={[styles.text, {color: 'black'}]}>Name</Text>
+                <Text style={[styles.text, {color: 'grey', fontWeight: 'thin'}]}>{numWorkouts} workouts</Text>
+              </View>
+              <Ionicons name="chevron-forward" style={{color: '#0A20FF', fontSize: 20, marginLeft: Dimensions.get('screen').width * .55,}} />
+            </Pressable>
         </View>
     );
 }
@@ -14,13 +22,30 @@ export default function ProfilePicture() {
 
 const styles = StyleSheet.create({
   
+  mainContainer: {
+    flexDirection:'row',
+    height: 70,
+    backgroundColor: 'white',
+    paddingLeft: 15,
+    alignItems: 'center',
+  },
+  pressableContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    width:'100%',
+  },
+  textContainer: {
+    flexDirection:'column',
+  },
   ionicon: {
-    size: 10,
     color:'#474747',
-    backgroundColor: 'red',
+    marginBottom: 0,
+    fontSize: 50,
   },
   text: {
+    marginLeft: 10,
     paddingTop: 0,
     fontWeight: 'bold',
+    fontSize: 16,
   },
 });
