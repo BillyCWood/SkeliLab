@@ -9,7 +9,7 @@ import Profile from './screens/Profile';
 import StartWorkout from './screens/StartWorkout';
 
 // Components
-import ProfileHeaderButtons from '../components/ProfileHeaderButtons';
+import ProfileHeaderButtons from '../components/profileComponents/ProfileHeaderButtons';
 
 // Screen Names
 const exercisesName = 'Exercises';

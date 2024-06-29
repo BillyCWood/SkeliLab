@@ -2,7 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { useTheme } from '@react-navigation/native';
 
-import ProfilePicture from '../../components/ProfilePicture';
+import ProfilePicture from '../../components/profileComponents/ProfilePicture';
+import Dashboard from '../../components/profileComponents/Dashboard';
 
 
 export default function Profile({navigation}) {
@@ -13,6 +14,7 @@ export default function Profile({navigation}) {
       
       <View style={[styles.container, {backgroundColor: colors.background}]}>
         <ProfilePicture />
+        <Dashboard />
       </View>
     );
 }
