@@ -3,8 +3,12 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function History({navigation}) {
   return (
-    <View style={styles.container}>
-      <Text>History</Text>
+    <View style={[styles.container, {backgroundColor: 'blue'}]}>
+      <View style={{backgroundColor: 'green'}}>
+        <Text style={{color:'red'}}>History</Text>
+        <Text>Test</Text>
+      </View>
+      
       <StatusBar style="auto" />
     </View>
   );
